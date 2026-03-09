@@ -1,9 +1,10 @@
 
 body{
 margin:0;
-font-family:Arial;
+font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial;
 background:#f6f8fa;
 }
+
 
 
 .login-body{
@@ -15,31 +16,48 @@ height:100vh;
 
 .login-container{
 background:white;
-padding:40px;
-width:350px;
+padding:45px;
+width:380px;
 text-align:center;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+border-radius:14px;
+box-shadow:0 10px 35px rgba(0,0,0,0.08);
 }
 
 .logo{
-width:60px;
+width:70px;
+margin-bottom:10px;
+}
+
+.subtitle{
+color:#6b7280;
+margin-bottom:25px;
 }
 
 .login-container input{
 width:100%;
-padding:10px;
+padding:12px;
 margin:10px 0;
-border:1px solid #ccc;
+border-radius:8px;
+border:1px solid #d0d7de;
+font-size:14px;
 }
 
 .login-container button{
 width:100%;
-padding:10px;
-background:#24292f;
-color:white;
+padding:12px;
 border:none;
+border-radius:8px;
+background:linear-gradient(90deg,#6366f1,#8b5cf6);
+color:white;
+font-weight:600;
 cursor:pointer;
+margin-top:10px;
+}
+
+.demo{
+margin-top:20px;
+font-size:13px;
+color:#555;
 }
 
 
@@ -48,7 +66,7 @@ cursor:pointer;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:16px 40px;
+padding:18px 60px;
 background:white;
 border-bottom:1px solid #e5e7eb;
 }
@@ -56,37 +74,50 @@ border-bottom:1px solid #e5e7eb;
 .nav-left{
 display:flex;
 align-items:center;
-gap:10px;
+gap:12px;
 }
 
 .nav-left img{
-width:32px;
+width:34px;
 }
 
 .nav-right input{
-padding:8px 12px;
-border:1px solid #ccc;
-border-radius:6px;
+padding:10px 14px;
+border:1px solid #d0d7de;
+border-radius:8px;
+}
+
+.nav-right button{
+padding:10px 16px;
+background:#24292f;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+margin-left:8px;
 }
 
 
 
 .issues-header{
-padding:30px 40px;
+padding:30px 60px;
 }
+
+
 
 .tabs{
 display:flex;
-gap:10px;
+gap:12px;
 margin-bottom:20px;
 }
 
 .tab{
-padding:8px 20px;
-background:#eee;
+padding:8px 24px;
+background:#e5e7eb;
 border:none;
-border-radius:6px;
+border-radius:8px;
 cursor:pointer;
+font-weight:600;
 }
 
 .tab.active{
@@ -107,21 +138,23 @@ display:flex;
 align-items:center;
 gap:10px;
 font-weight:600;
+font-size:16px;
 }
 
 .summary-left img{
-width:22px;
+width:24px;
 }
 
 .summary-right{
 display:flex;
-gap:25px;
+gap:30px;
 }
 
 .status{
 display:flex;
 align-items:center;
-gap:6px;
+gap:8px;
+font-weight:600;
 }
 
 .status img{
@@ -129,27 +162,27 @@ width:22px;
 }
 
 
-
-
 .issues-grid{
 display:grid;
-grid-template-columns:repeat(4,1fr);
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:24px;
-padding:0 40px 40px;
+padding:0 60px 50px;
 }
+
 
 
 .card{
 background:white;
-padding:20px;
-border-radius:12px;
-box-shadow:0 4px 10px rgba(0,0,0,0.06);
+padding:22px;
+border-radius:14px;
+box-shadow:0 8px 20px rgba(0,0,0,0.05);
 cursor:pointer;
-transition:0.2s;
+transition:0.25s;
 }
 
 .card:hover{
-transform:translateY(-4px);
+transform:translateY(-6px);
+box-shadow:0 12px 28px rgba(0,0,0,0.08);
 }
 
 .card.open{
@@ -173,9 +206,11 @@ font-weight:600;
 }
 
 .status-badge{
-padding:4px 10px;
+padding:6px 12px;
 border-radius:20px;
 font-size:12px;
+font-weight:600;
+text-transform:capitalize;
 }
 
 .status-badge.open{
@@ -212,9 +247,9 @@ color:#777;
 
 .spinner{
 border:6px solid #eee;
-border-top:6px solid black;
-width:40px;
-height:40px;
+border-top:6px solid #6366f1;
+width:42px;
+height:42px;
 border-radius:50%;
 animation:spin 1s linear infinite;
 margin:40px auto;
@@ -226,7 +261,6 @@ display:none;
 }
 
 
-
 .modal{
 position:fixed;
 top:0;
@@ -234,17 +268,19 @@ left:0;
 width:100%;
 height:100%;
 display:none;
-background:rgba(0,0,0,0.5);
+background:rgba(0,0,0,0.45);
 justify-content:center;
 align-items:center;
 }
 
 .modal-content{
 background:white;
-padding:25px;
-width:400px;
-border-radius:10px;
+padding:30px;
+width:420px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
+
 
 
 @media(max-width:1024px){
@@ -256,5 +292,14 @@ grid-template-columns:repeat(2,1fr);
 @media(max-width:600px){
 .issues-grid{
 grid-template-columns:1fr;
+padding:0 20px 40px;
+}
+
+.navbar{
+padding:16px 20px;
+}
+
+.issues-header{
+padding:20px;
 }
 }
