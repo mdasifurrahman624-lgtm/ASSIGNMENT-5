@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Issues Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="nav-left">
+<img src="assets/github-logo.png">
+<h2>Issues Tracker</h2>
+</div>
+
+<div class="nav-right">
+<input id="searchInput" type="text" placeholder="Search issues">
+<button onclick="searchIssues()">Search</button>
+</div>
+
+</nav>
+
+
+<section class="issues-header">
+
+<div class="tabs">
+<button class="tab active" onclick="filterIssues('all',event)">All</button>
+<button class="tab" onclick="filterIssues('open',event)">Open</button>
+<button class="tab" onclick="filterIssues('closed',event)">Closed</button>
+</div>
+
+
+<div class="issues-summary">
+
+<div class="summary-left">
+<img src="assets/Aperture.png">
+<span id="issueCount">0 Issues</span>
+</div>
+
+<div class="summary-right">
+
+<div class="status">
+<img src="assets/Open-Status.png">
+<span id="openCount">0</span>
+</div>
+
+<div class="status">
+<img src="assets/Closed- Status .png">
+<span id="closedCount">0</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<div id="spinner" class="spinner"></div>
+
+<div id="issuesContainer" class="issues-grid"></div>
+
+<div id="modal" class="modal"></div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
